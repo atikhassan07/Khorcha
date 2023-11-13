@@ -60,7 +60,7 @@
                             <li><a href="{{ url('all/income') }}"><i class="fas fa-coins"></i> Income</a></li>
                             <li><a href="{{ url('all/expense/category') }}"><i class="fas fa-clipboard-list"></i> Expense Category</a></li>
                             <li><a href="{{ url('all/expense') }}"><i class="fas fa-coins"></i> Expense</a></li>
-                            <li><a href="{{ url('all/expense') }}"><i class="fas fa-list-ul"></i>Report</a></li>
+                            <li><a href="{{ url('dashboard/report') }}"><i class="fas fa-list-ul"></i>Report</a></li>
                             <li><a href="{{ url('dashboard/social') }}"><i class="fas fa-share-alt-square"></i> Social Media</a></li>
                             <li><a href="{{ url('dashboard/basic/info') }}"><i class="fab fa-adn"></i> App Information</a></li>
 

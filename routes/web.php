@@ -8,6 +8,7 @@ use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\IncomecategoryController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SocialmediaController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -90,7 +91,7 @@ Route::get('delete/expense/{id}', [ExpenseController::class,'delete']);
 Route::get('/expense/pdf', [ExpenseController::class,'pdf']);
 
 //Report
-// next work report
+Route::get('dashboard/report', [ReportController::class,'report']);
 
 
 // Social Media
