@@ -35,7 +35,7 @@
                         <td>{{ $user->phone }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->username }}</td>
-                        <td>{{ $user->role }}</td>
+                        <td>{{ $user->roleInfo->role_name }}</td>
                         <td>
                             <div class="btn-group btn_group_manage" role="group">
                             <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>

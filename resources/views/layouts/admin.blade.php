@@ -53,14 +53,20 @@
                     </div>
                     <div class="menu">
                         <ul>
-                            {{-- <i class="fas fa-list-ul"></i> --}}
-                            <li><a href="{{ url('dashboard/all/user') }}"><i class="fas fa-user-circle"></i>Users</a></li>
                             <li><a href="{{ url('dashboard') }}"><i class="fas fa-home"></i> Dashboard</a></li>
+                            {{-- <i class="fas fa-list-ul"></i> --}}
+                            @if (Auth::user()->role==1)
+                            <li><a href="{{ url('dashboard/all/user') }}"><i class="fas fa-user-circle"></i>Users</a></li>
+                            @endif
+                            @if (Auth::user()->role<=2)
                             <li><a href="{{ url('all/income/category') }}"><i class="fas fa-clipboard-list"></i> Income Category</a></li>
                             <li><a href="{{ url('all/income') }}"><i class="fas fa-coins"></i> Income</a></li>
                             <li><a href="{{ url('all/expense/category') }}"><i class="fas fa-clipboard-list"></i> Expense Category</a></li>
                             <li><a href="{{ url('all/expense') }}"><i class="fas fa-coins"></i> Expense</a></li>
+                            @endif
+                            @if (Auth::user()->role==1)
                             <li><a href="{{ url('dashboard/report') }}"><i class="fas fa-list-ul"></i>Report</a></li>
+                            @endif
                             <li><a href="{{ url('dashboard/social') }}"><i class="fas fa-share-alt-square"></i> Social Media</a></li>
                             <li><a href="{{ url('dashboard/basic/info') }}"><i class="fab fa-adn"></i> App Information</a></li>
 
