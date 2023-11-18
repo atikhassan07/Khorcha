@@ -30,7 +30,7 @@
                         <td>{{$key+1 }}</td>
                         <td>{{ $income->title }}</td>
                         <td>{{ $income->rel_to_incategory->incate_name }}</td>
-                        <td>{{ $income->ammount }}</td>
+                        <td>{{ number_format($income->ammount,2) }}</td>
                         <td>
                             <div class="btn-group btn_group_manage" role="group">
                             <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>

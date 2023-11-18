@@ -31,7 +31,7 @@
                         <td>{{$key+1 }}</td>
                         <td>{{ $expense->title }}</td>
                         <td>{{ $expense->rel_to_excategory->expcate_name }}</td>
-                        <td>{{ $expense->ammount }}</td>
+                        <td>{{ number_format($expense->ammount,2) }}</td>
                         <td>
                             <div class="btn-group btn_group_manage" role="group">
                             <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
