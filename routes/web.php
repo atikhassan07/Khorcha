@@ -35,9 +35,9 @@ Route::get('dashboard', [AdminController::class, 'index']);
 Route::get('dashboard/all/user', [UserController::class, 'index']);
 Route::get('dashboard/add/user', [UserController::class, 'add']);
 Route::post('dashboard/store/user', [UserController::class, 'store']);
-Route::get('dashboard/edit/user', [UserController::class, 'edit']);
+Route::get('dashboard/edit/user/{slug}', [UserController::class, 'edit']);
 Route::post('dashboard/update/user', [UserController::class, 'update']);
-Route::get('dashboard/delete/user', [UserController::class, 'delete']);
+Route::get('dashboard/delete/user/{id}', [UserController::class, 'delete']);
 
 
 

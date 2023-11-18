@@ -9,7 +9,7 @@
                     <i class="fab fa-gg-circle"></i>All Income Information
                 </div>
                 <div class="col-md-4 card_button_part">
-                    <a href="{{ url('add/income') }}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add Income</a>
+                    <a href="{{ url('add/income/category') }}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add Income Category</a>
                 </div>
             </div>
             </div>

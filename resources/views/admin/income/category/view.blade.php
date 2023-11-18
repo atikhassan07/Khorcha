@@ -37,14 +37,14 @@
                         <td>Created Time</td>
                         <td>:</td>
                         <td>
-                            {{ $viewCategory->created_at->diffForHumans() }}<br>
+                            {{ $viewCategory->created_at }}<br>
                         </td>
                         </tr>
                         <tr>
                         <td>Update Time</td>
                         <td>:</td>
                         <td>
-                            {{ $viewCategory->updated_at->diffForHumans() }}<br>
+                            {{ $viewCategory->updated_at }}<br>
                         </td>
                         </tr>
                     </table>

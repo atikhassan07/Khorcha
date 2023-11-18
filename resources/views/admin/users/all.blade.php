@@ -41,8 +41,8 @@
                             <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="view-user.html">View</a></li>
-                                <li><a class="dropdown-item" href="edit-user.html">Edit</a></li>
-                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item" href="{{ url('dashboard/edit/user',$user->slug) }}">Edit</a></li>
+                                <li><a class="dropdown-item" href="{{ url('dashboard/delete/user',$user->id) }}">Delete</a></li>
                             </ul>
                             </div>
                         </td>

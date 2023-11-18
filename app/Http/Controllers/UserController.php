@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -43,10 +44,13 @@ class UserController extends Controller
             'role.required'=>'Please Select Your Role :)',
         ]);
 
+        $slug='U'.uniqid('20');
+
         $insert = User::insertGetId([
             'name'=>$request->name,
             'phone'=>$request->phone,
             'email'=>$request->email,
+            'slug'=>$slug,
             'username'=>$request->username,
             'password'=>Hash::make($request->password),
             'role'=>$request->role,
@@ -61,5 +65,52 @@ class UserController extends Controller
             return redirect('dashboard/add/user');
         }
 
-}
+    }
+
+    public function edit($slug)
+    {
+        $users=User::where('status',1)->where('slug',$slug)->firstOrFail();
+        return view('admin.users.edit',compact('users'));
+    }
+
+    public function update(Request $request)
+    {
+
+        $id=$request['id'];
+
+        $slug=$request['slug'];
+
+        if($request->hasFile('image') == null)
+        {
+            User::where('id',$id)->update([
+                'name'=>$request->name,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'updated_at'=>Carbon::now()->toDateTimeString(),
+            ]);
+            return redirect('dashboard/all/user');
+        }
+        else{
+            if($request->hasFile('image')){
+                $image = $request->file('image');
+                $imageName ='U-'.'-'.time().'.'.$image->getClientOriginalExtension();
+                Image::make($image)->save(public_path('uploads/user_image'.$imageName));
+            }
+            User::where('id',$id)->update([
+                'name'=>$request->name,
+                'phone'=>$request->phone,
+                'email'=>$request->email,
+                'image'=>$imageName,
+                'updated_at'=>Carbon::now()->toDateTimeString(),
+            ]);
+            return redirect('dashboard/all/user');
+        }
+    }
+
+    public function delete($id){
+        User::where('status',1)->where('id',$id)->update([
+            'status'=> 0,
+        ]);
+        return redirect('dashboard/all/user');
+    }
 }
