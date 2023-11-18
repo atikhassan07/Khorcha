@@ -30,6 +30,13 @@ class IncomeController extends Controller
         $incomeCategory = Incomecategory::where('status', 1)->orderBy('id','DESC')->get();
         return view('admin.income.main.add',compact('incomeCategory'));
     }
+    // edit
+    public function edit($slug)
+    {
+        $editIncome = Income::where('status',1)->where('slug',$slug)->firstOrFail();
+
+        return view('admin.income.main.edit',compact('editIncome'));
+    }
     // insert
     public function store(Request $request)
     {
@@ -64,7 +71,23 @@ class IncomeController extends Controller
 
         return back()->with($notification);
     }
+    // update
+    public function update(Request $request)
+    {
+        $id = $request->id;
+        $slug = $request->slug;
 
+        Income::where('status', 1)->where('id',$id)->update([
+            'title'=>$request->title,
+            'sub_title'=>$request->sub_title,
+            'date'=>$request->date,
+            'ammount'=>$request->ammount,
+            'remarks'=>$request->remarks,
+            'updated_at'=>Carbon::now(),
+        ]);
+
+        return back();
+    }
     // view
     public function view($slug)
     {

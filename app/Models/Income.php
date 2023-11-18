@@ -15,4 +15,9 @@ class Income extends Model
 
        return $this->belongsTo('App\Models\Incomecategory', 'incate_id', 'id');
     }
+
+    public function rel_to_creator(){
+
+       return $this->belongsTo('App\Models\User', 'income_creator', 'id');
+    }
 }

@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label col_form_label">income Category<span class="req_star">*</span>:</label>
+                    <label class="col-sm-3 col-form-label col_form_label">Income Category<span class="req_star">*</span>:</label>
                     <div class="col-sm-7">
                         <input type="text" class="form-control form_control" id="" name="incate_name" value="{{ old('incate_name') }}">
                         @error('incate_name')

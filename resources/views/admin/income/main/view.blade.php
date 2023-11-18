@@ -31,7 +31,7 @@
                         <tr>
                         <td>Creator Name</td>
                         <td>:</td>
-                        <td>{{ $viewIncome->CreatorInfo->name ?? ''}}</td>
+                        <td>{{ $viewIncome->rel_to_creator->name}}</td>
                         </tr>
                         <tr>
                         <td>Salary Date</td>
