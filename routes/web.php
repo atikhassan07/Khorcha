@@ -64,6 +64,7 @@ Route::get('soft/delete/income/{id}', [IncomeController::class,'softDelete']);
 Route::get('restore/income/{id}', [IncomeController::class,'restore']);
 Route::get('delete/income/{id}', [IncomeController::class,'delete']);
 Route::get('/income/pdf', [IncomeController::class,'pdf']);
+Route::get('/income/excel', [IncomeController::class,'excel']);
 
 
 // Expense Category Routes

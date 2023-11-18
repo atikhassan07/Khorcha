@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\IncomeExport;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Incomecategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Income;
 use Carbon\Carbon;
+use Maatwebsite\Excel\Facades\Excel;
 use PDF;
 class IncomeController extends Controller
 {
@@ -104,5 +106,10 @@ class IncomeController extends Controller
             $pdf = PDF::loadView('admin.income.main.pdf',compact('incomes'));
 
             return $pdf->download('Income'.time());
+        }
+        //excel
+        public function excel(){
+            // $incomes = Income::all();
+            return Excel::download(new IncomeExport, 'Income'.time().'.xlsx');
         }
 }
