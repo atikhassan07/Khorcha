@@ -14,4 +14,9 @@ class Expense extends Model
 
        return $this->belongsTo('App\Models\Expensecategory', 'expcate_id', 'id');
     }
+
+    public function rel_to_creator(){
+
+        return $this->belongsTo('App\Models\User', 'expense_creator', 'id');
+     }
 }

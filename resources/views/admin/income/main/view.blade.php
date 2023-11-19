@@ -44,7 +44,7 @@
                         <td>Salary Ammount</td>
                         <td>:</td>
                         <td>
-                            {{ $viewIncome->ammount }}<br>
+                            {{ number_format($viewIncome->ammount,2) }}<br>
                         </td>
                         </tr>
                     </table>

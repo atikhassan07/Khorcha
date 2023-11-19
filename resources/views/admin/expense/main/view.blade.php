@@ -31,7 +31,7 @@
                         <tr>
                         <td>Creator Name</td>
                         <td>:</td>
-                        <td>{{ $viewExpense->CreatorInfo->name ?? ''}}</td>
+                        <td>{{ $viewExpense->rel_to_creator->name}}</td>
                         </tr>
                         <tr>
                         <td>Expense Date</td>
@@ -44,7 +44,7 @@
                         <td>Expense Ammount</td>
                         <td>:</td>
                         <td>
-                            {{ $viewExpense->ammount }}<br>
+                            {{ number_format($viewExpense->ammount,2) }}<br>
                         </td>
                         </tr>
                     </table>
