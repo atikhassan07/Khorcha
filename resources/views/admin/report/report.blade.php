@@ -20,6 +20,20 @@
     <div class="col-md-12">
         <div class="card mb-3">
             <div class="card-header">
+               <div class="p-1">
+                <a href=""><span class="badge bg-primary">January</span></a>
+                <a href=""><span class="badge bg-info">February</span></a>
+                <a href=""><span class="badge bg-secondary">March</span></a>
+                <a href=""><span class="badge bg-warning">April</span></a>
+                <a href=""><span class="badge bg-success">May</span></a>
+                <a href=""><span class="badge bg-danger">June</span></a>
+                <a href=""><span class="badge bg-dark">July</span></a>
+                <a href=""><span class="badge bg-primary">Augast</span></a>
+                <a href=""><span class="badge bg-info">Septembar</span></a>
+                <a href=""><span class="badge bg-danger">October</span></a>
+                <a href=""><span class="badge bg-success">November</span></a>
+                <a href=""><span class="badge bg-danger">Decmber</span></a>
+               </div>
             <div class="row">
                 <div class="col-md-8 card_title_part">
                     <i class="fab fa-gg-circle"></i>{{ $current_month }} :: Income Expense Summery

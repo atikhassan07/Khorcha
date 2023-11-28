@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArchiveController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BasicinfoController;
 use App\Http\Controllers\ContactinfoController;
@@ -94,6 +95,8 @@ Route::get('/expense/pdf', [ExpenseController::class,'pdf']);
 //Report
 Route::get('dashboard/report', [ReportController::class,'report']);
 
+//Archive
+Route::get('dashboard/archive', [ArchiveController::class, 'archive']);
 
 // Social Media
 Route::get('dashboard/social', [SocialmediaController::class,'social']);
